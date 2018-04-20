@@ -18,7 +18,6 @@ public:
 
     virtual ~ImageBasedDensityProvider();
 
-    virtual float operator()(const Point& a, const Point& b, const Point& c, const Point& d) const;
     virtual float operator()(const AABB& aabb) const;
 
 protected:

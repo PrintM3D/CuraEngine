@@ -55,15 +55,6 @@ ImageBasedDensityProvider::~ImageBasedDensityProvider()
     }
 }
 
-float ImageBasedDensityProvider::operator()(const Point& a, const Point& b, const Point& c, const Point& d) const
-{
-    AABB aabb_here;
-    aabb_here.include(a);
-    aabb_here.include(b);
-    aabb_here.include(c);
-    aabb_here.include(d);
-    return operator()(aabb_here);
-}
 float ImageBasedDensityProvider::operator()(const AABB& aabb_here) const
 {
     Point min = (aabb_here.min - aabb.min - Point(1,1)) * image_size.x / (aabb.max.X - aabb.min.X);
